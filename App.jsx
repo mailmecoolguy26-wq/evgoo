@@ -253,7 +253,8 @@ function Signup({ onBack, onDone }) {
 ══════════════════════════════════════════════════════════════ */
 function OTP({ onBack, onVerify }) {
   const [digits,setDigits]=useState(Array(6).fill(""));
-  const refs=Array(6).fill(0).map(()=>useRef());
+  const r0=useRef(),r1=useRef(),r2=useRef(),r3=useRef(),r4=useRef(),r5=useRef();
+  const refs=[r0,r1,r2,r3,r4,r5];
   const handle=(i,v)=>{const n=[...digits];n[i]=v.slice(-1);setDigits(n);if(v&&i<5)refs[i+1].current?.focus();};
   return (
     <Screen center style={{ padding:"0 28px" }}>
@@ -2185,7 +2186,8 @@ function ForgotPassword({ onBack, onDone }) {
   const [digits,setDigits]= useState(Array(6).fill(""));
   const [pass,  setPass]  = useState("");
   const [conf,  setConf]  = useState("");
-  const refs = Array(6).fill(0).map(() => useRef());
+  const f0=useRef(),f1=useRef(),f2=useRef(),f3=useRef(),f4=useRef(),f5=useRef();
+  const refs=[f0,f1,f2,f3,f4,f5];
 
   const handleOtp = (i,v) => {
     const n=[...digits]; n[i]=v.slice(-1); setDigits(n);
@@ -5724,8 +5726,10 @@ function ChangeCredential({ onBack }) {
   const [newVal,   setNewVal]  = useState("");
   const [otp1,     setOtp1]    = useState(Array(6).fill(""));
   const [otp2,     setOtp2]    = useState(Array(6).fill(""));
-  const refs1 = Array(6).fill(0).map(()=>useRef());
-  const refs2 = Array(6).fill(0).map(()=>useRef());
+  const c0=useRef(),c1=useRef(),c2=useRef(),c3=useRef(),c4=useRef(),c5=useRef();
+  const refs1=[c0,c1,c2,c3,c4,c5];
+  const d0=useRef(),d1=useRef(),d2=useRef(),d3=useRef(),d4=useRef(),d5=useRef();
+  const refs2=[d0,d1,d2,d3,d4,d5];
   const h1=(i,v)=>{const n=[...otp1];n[i]=v.slice(-1);setOtp1(n);if(v&&i<5)refs1[i+1].current?.focus();};
   const h2=(i,v)=>{const n=[...otp2];n[i]=v.slice(-1);setOtp2(n);if(v&&i<5)refs2[i+1].current?.focus();};
 
