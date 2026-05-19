@@ -3993,7 +3993,7 @@ function Subscriptions({ onBack }) {
                       {/* Core metrics */}
                       <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8, marginTop:16 }}>
                         {[
-                          ["🚗", plan.rides ? `${plan.rides}`, "Rides"],
+                          ["🚗", plan.rides ? `${plan.rides}` : "∞", "Rides"],
                           ["📍", `${plan.kmPerRide} km`, "Per ride"],
                           ["🗺️", totalPool ? `${totalPool} km` : "∞", "Monthly pool"],
                         ].map(([ic, v, l]) => (
